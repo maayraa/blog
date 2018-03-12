@@ -8,6 +8,12 @@ li{
     list-style: none;
 }
 
+a{text-decoration: none;}
+
+.clear{
+    clear: both;
+}
+
 .perfil{
     width: 100%;
     /* border: 1px solid black; */
@@ -19,7 +25,31 @@ li{
     font-size: 1.3em;
 }
 
+ul{
+    display: flex;
+    margin-top: 1em;
+}
+
 .item-menu{
+    margin: auto;
     background: orange;
-    border: 
+    border: 1px solid orange;
+    width: 20%;
+    text-align: center;
+    transition: all 500ms;
+}
+
+.item-menu a{
+    display: block;
+    padding: .8em;
+    color: white;
+    font-family: arial;
+    /* PONER GRUESITO LAS LETRAS */
+    font-weight: bold;
+    transition: all 500ms;
+}
+
+.item-menu:hover, .item-menu a:hover{
+    background: transparent;
+    color: orange;
 }

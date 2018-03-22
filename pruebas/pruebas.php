@@ -1,15 +1,18 @@
 <?php
-    include 'config/dbase.php';
-    include 'config/funciones.php';
+    // CREA UN ENLAZE CON LAS RUTAS DE CONFIG Y FUNCIONES
+    require '../config/config.php';
+    require '../funciones/funciones.php';
+    // CREA LA CONEXION A LA BASE DE DATOS
     $conexion = conexion($bd_config);
-
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // IMPORTA TODOS LOS DATOS
         $usuario = $_POST['user'];
-        $nombre = $_POST['nom'];
+        $nombre = $_POST['nom'] ;
         $apellidos = $_POST['ape'];
         $correo = $_POST['email'];
         $password = $_POST['pass'];
-
+        
         // VARIBLE PARA DAR MENSAJES DE ERROR
         $error = '';
         // $avatar = ;
@@ -19,52 +22,48 @@
             $error = '<li class=error>Por favor rellene todos los campos</li>';
         } else {
             // PREPARA LA SENTENCIA SQL PARA VER QUE NO ESTE REGISTRADO UN USUARIO IGUAL
-            
-            $statement = $conexion->prepare('SELECT * FROM usuarios WHERE nom_user = :nom_user LIMIT 1');
+            $statement = $conexion->prepare('SELECT * FROM users WHERE nom_user = :nom_user LIMIT 1');
             $statement->execute([':nom_user'=>$usuario]);
             $resultado = $statement->fetch();
             if ($resultado != false) {
                 $error .= '<li class=error>Este usuario ya existe</li>';
             } else{
-                 // PREPARA LA SENTENCIA SQL PARA VER QUE NO ESTE REGISTRADO UN USUARIO IGUAL
-
-                 $statement = $conexion->prepare('SELECT * FROM perfil WHERE correo = :correo LIMIT 1');
-                 $statement->execute([':correo'=>$correo]);
-                 $resultado = $statement->fetch();
-                 if ($resultado != false) {
-                     $error .= '<li class=error>Este correo ya esta registrado</li>';
-                 }
-             }
-         }
-          // SI LA VARIABLE NO GUARDO NINGUN MENSAJE, PROSIGUE A GUARDAR LOS DATOS
+                // PREPARA LA SENTENCIA SQL PARA VER QUE NO ESTE REGISTRADO UN USUARIO IGUAL
+                $statement = $conexion->prepare('SELECT * FROM perfiles WHERE cro_per = :correo LIMIT 1');
+                $statement->execute([':correo'=>$correo]);
+                $resultado = $statement->fetch();
+                if ($resultado != false) {
+                    $error .= '<li class=error>Este correo ya esta registrado</li>';
+                }
+            }
+        }
+        // SI LA VARIABLE NO GUARDO NINGUN MENSAJE, PROSIGUE A GUARDAR LOS DATOS
         if ($error == '') {
             // PREPARA LA SENTENCIA SQL PARA GUARDAR LOS DATOS A LA TABLA PERFILES
-            $statement = $conexion->prepare('INSERT INTO perfil (id_perfil, nombre, ape, correo) VALUES(null, :nombre, :ape, :correo)');
+            $statement = $conexion->prepare('INSERT INTO perfiles (id_per, nom_per, ape_per, cro_per) VALUES(null, :nom_per, :ape_per, :cro_per)');
             $statement->execute([
-                ':nombre'=>$nombre,
-                ':ape'=>$apellidos,
-                ':correo'=>$correo
+                ':nom_per'=>$nombre,
+                ':ape_per'=>$apellidos,
+                ':cro_per'=>$correo
             ]);
             if ($statement == true) {
                 // PREPARA LA SENTENCIA SQL PARA GUARDAR LOS DATOS A LA TABLA USUARIOS
                 $perfil = getPerfiles($correo, $conexion);
-                $id = $perfil['id_perfil'];
-                $statement = $conexion->prepare('INSERT INTO usuarios (id_usuario, nom_user, password, tipo_user, status, id_perfil) VALUES(null, :usuario, :password, :tipo, :status, :id)');
+                $id = $perfil['id_per'];
+                $statement = $conexion->prepare('INSERT INTO users (id_user, nom_user, pas_user, tipos_user, status, id_per) VALUES(null, :usuario, :password, :tipo, :status, :id)');
                 $statement->execute([
                     ':usuario'=>$usuario,
                     ':password'=>$password,
-                    ':tipo'=>'1',
+                    ':tipo'=>'usuario normal',
                     ':status'=>'activo',
                     ':id'=>$id
                 ]);
                 $estado = 'TE HAS REGISTRADO EXITOSAMENTE';
-                return require './login.html';
+                return require '../views/estado.view.php';;
             }else{
                 $estado = 'ERROR 404';
-                // return require '../views/estado.view.php';
+                return require '../views/estado.view.php';
             }
         }
     }
     require '../views/register.view.php';
-
-?>          

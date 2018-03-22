@@ -92,10 +92,26 @@ ul{
     transition: all 500ms;
     margin-top: 2%;
     border: 2px solid #DA3E10;
-    width: 90%;
+    width: 75%;
     border-radius: 10px;
   
 }
+
+.post_c{
+    margin: auto;
+    font-size: 13px;
+    display: block;
+    padding: 2em;
+    color: black;
+    font-family: arial;
+    transition: all 500ms;
+    margin-top: 2%;
+    border: 2px solid #DA3E10;
+    width: 50%;
+    border-radius: 10px;
+  
+}
+
 
 .post-buttons{
     text-align: right;
@@ -124,14 +140,14 @@ h1.post-titulo{
 
 }
 
-.fecha, .escritor{
+.fecha, .escritor, .categoria{
     margin-top: .5em;
     margin-bottom: .5em;
     font-weight: bold;
 }
 
 footer{
-    margin-top: 18.6em;
+    margin-top: 2.5em;
     position: relative;
     bottom: 0;
     padding: 1em;

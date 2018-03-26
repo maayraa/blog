@@ -21,5 +21,3 @@
             header('Location: '.RUTA.'validacion.php');
         }
     }
-    
-

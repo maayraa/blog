@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
 			<div class="perfil-info">
 				<img src="images/avatar.png" alt="">
 				<p class="izquierda">Blog de moda</p>
-				<p class="derecha"><a href="login.html">Iniciar Sesion</a></p>
+				<p class="derecha"><a href="login.view.php">Iniciar Sesion</a></p>
 				<div class="clear"></div>
 			</div>
 		</div>

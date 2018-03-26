@@ -13,7 +13,12 @@
 			<div class="perfil-info">
 				<img src="images/avatar.png" alt="">
 				<p class="izquierda">Bienvenido!!!</p>
-				<p class="derecha">Perfil de usuario</p>
+				<p class="derecha">
+				<?php session_start();
+					echo $_SESSION['usuario'];
+				?>
+				</p>
+				<a href="cerrarsesion.php" class=derecha-a>Cerrar Sesion</a>
 				<div class="clear"></div>
 			</div>
 		</div>

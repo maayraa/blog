@@ -8,6 +8,11 @@ li{
     list-style: none;
 }
 
+li img{
+    margin: auto;
+    width: 40%;
+}
+
 a{
     text-decoration: none;
 }

@@ -30,7 +30,7 @@
                 </div>
                 <div class="content-botton">
                     <input type="submit" value="Ingresar" name="subm" class="botton-i">
-                    <a href="registro.html" title="" class="botton-a">Registrarse</a>
+                    <a href="registro.view.php" title="" class="botton-a">Registrarse</a>
                 </div>
             </form>
         </div>

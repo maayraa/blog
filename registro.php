@@ -58,7 +58,7 @@
                     ':id'=>$id
                 ]);
                 $estado = 'TE HAS REGISTRADO EXITOSAMENTE';
-                return require './login.html';
+                return require './login.view.php';
             }else{
                 $estado = 'ERROR 404';
                 // return require '../views/estado.view.php';

@@ -10,39 +10,36 @@
 <body>
     <h1>Nueva publicacion</h1>
 </div>
+<form action="nuevapub.php" method="POST">
 <div class="content-user">
-    <label>Id de publicacion:</label><input type="text" name="user">
+    <label>Id de publicacion:</label><input type="text" name="id_pub">
 </div>
 <br>
 <div class="content-user">
-    <label>Id de categoria:</label><input type="text" name="nom">
+    <label>Id de categoria:</label><input type="text" name="id_cat">
 </div>
 <br>
-<div class="content-pass">
-    <label>Id usuario:</label><input type="text" name="ape">
+<div class="content-user">
+    <label>Id usuario:</label><input type="text" name="id_usuario">
 </div>
 <br>
-<div class="content-pass">
-    <label>Usuario:</label><input type="text" name="email">
-</div>
-<br>
-<div class="content-pass">
-    <label>Titulo:</label><input type="text" name="pass">
+<div class="content-user">
+    <label>Titulo:</label><input type="text" name="titulo">
 </div>
 <br>
  <div class="content-pass">
-    <label>Contenido:</label><input type="text" name="pass" value="">
+    <label>Contenido:</label><input type="text" name="conte" >
 </div> 
 <br>
-<div class="content-pass">
-    <label>Fecha:</label><input type="text" name="pass" value="">
+<div class="content-user">
+    <label>Fecha:</label><input type="date" name="fecha">
 </div> 
 <br>
-<div class="content-pass">
-    <label>Estatus:</label><input type="text" name="pass" value="">
+<div class="content-user">
+    <label>Estatus:</label><input type="text" name="status">
 </div> 
 <br>
-<input type="submit" value="Publicar" class="botton-i">
+<input type="submit" value="Publicar" class="botton-i" href="inicio.view.php">
 <div class="content-botton">
     
     

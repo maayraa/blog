@@ -33,7 +33,7 @@
 		<div class="post">
 			<h1 class="post-titulo">Titulo</h1>
 			<div class="post-info">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sit esse omnis quae laborum facere illo enim veniam debitis porro libero deleniti at quo, nihil assumenda odit tempora, qui nulla.
+				
 			</div>
 		</div>
 		<div class="post">

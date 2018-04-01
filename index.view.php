@@ -1,4 +1,13 @@
+<?php
+	require 'config/dbase.php';
+	require 'config/funciones.php';
+	$conexion = conexion($bd_config);
+	$stm = $conexion->prepare('SELECT * FROM publicaciones');
+	$stm->execute();
+	$pub = $stm;
+	
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,24 +39,14 @@
 	<div class="clear"></div>
 	<!-- SECCION DE NOTICIAS -->
 	<main>
-		<div class="post">
-			<h1 class="post-titulo">Titulo</h1>
-			<div class="post-info">
-				
-			</div>
-		</div>
-		<div class="post">
-			<h1 class="post-titulo">Titulo</h1>
-			<div class="post-info">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sit esse omnis quae laborum facere illo enim veniam debitis porro libero deleniti at quo, nihil assumenda odit tempora, qui nulla.
-			</div>
-		</div>
-		<div class="post">
-			<h1 class="post-titulo">Titulo</h1>
-			<div class="post-info">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sit esse omnis quae laborum facere illo enim veniam debitis porro libero deleniti at quo, nihil assumenda odit tempora, qui nulla.
-			</div>
-		</div>
+	<?php
+			foreach ($pub as $valor ) {
+				echo '<div class="post">';
+				echo '<h1 class="post-titulo">'. $valor['titulo'] .'</h1>';
+				echo '<div class="post-info">'. $valor['conte']. '</div>';
+				echo '</div>';
+			}
+		?>
 	</main>
 	<!-- PIE DE PAGINA -->
 	<footer>

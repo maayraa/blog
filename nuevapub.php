@@ -6,7 +6,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $idpub = $_POST['id_pub'];
         $idcat = $_POST['id_cat'];
-        $iduser = $_POST['id_usuario'];
+        $nom_user = $_POST['nom_user'];
         $titulo = utf8_encode($_POST['titulo']);
         $cont = utf8_encode($_POST['conte']);
         $fecha = $_POST['fecha'];
@@ -17,7 +17,7 @@
         // $avatar = ;
 
         // VALIDA QUE LOS CAMPOS ESTEN LLENOS
-        if (empty($idcat) || empty($iduser) || empty($titulo) ) {
+        if (empty($idcat) || empty($nom_user) || empty($titulo) ) {
             $error = '<li class=error>Por favor rellene todos los campos</li>';
         } else {
             // PREPARA LA SENTENCIA SQL PARA VER QUE NO ESTE REGISTRADO UN USUARIO IGUAL
@@ -32,10 +32,10 @@
           // SI LA VARIABLE NO GUARDO NINGUN MENSAJE, PROSIGUE A GUARDAR LOS DATOS
         if ($error == '') {
             // PREPARA LA SENTENCIA SQL PARA GUARDAR LOS DATOS A LA TABLA PERFILES
-            $statement = $conexion->prepare('INSERT INTO publicaciones (id_cat, id_usuario, titulo, conte, fecha, status) VALUES(:id_cat, :id_usuario, :titulo, :conte, :fecha, :status)');
+            $statement = $conexion->prepare('INSERT INTO publicaciones (id_cat, nom_user, titulo, conte, fecha, status) VALUES(:id_cat, :nom_user, :titulo, :conte, :fecha, :status)');
             $statement->execute([
                 ':id_cat'=>$idcat,
-                ':id_usuario'=>$iduser,
+                ':nom_user'=>$nom_user,
                 ':titulo'=>$titulo,
                 ':conte'=>$cont,
                 ':fecha'=>$fecha,

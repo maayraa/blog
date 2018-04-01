@@ -46,6 +46,14 @@ a{
     font-size: 1.5em;
 }
 
+.derecha-a{
+    float: right;
+    margin-top: .4em;
+    font-size: 1em;
+    color: blue;
+    margin-right: 1em;
+}
+
 .izquierda{
     float: left;
     font-size: 2em;
@@ -119,8 +127,7 @@ h1.post-titulo{
 }
 
 .fecha{
-    float:left;
-    margin-right: .5em;
+    margin-right:10em;
 
 }
 
@@ -128,6 +135,9 @@ h1.post-titulo{
     margin-top: .5em;
     margin-bottom: .5em;
     font-weight: bold;
+    color: #FF8469;
+    margin-right: 10em;
+
 }
 
 footer{

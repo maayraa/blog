@@ -5,8 +5,6 @@
 	$stm = $conexion->prepare('SELECT * FROM publicaciones');
 	$stm->execute();
 	$pub = $stm;
-	
-
 ?>
 
 
@@ -15,7 +13,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="inicio.css">
 	<title>Inicio</title>
 </head>
 <body>
@@ -50,10 +48,8 @@
 			foreach ($pub as $valor ) {
 				echo '<div class="post">';
 				echo '<h1 class="post-titulo">'. $valor['titulo'] .'</h1>';
-				echo '<p class="escritor">'. $valor['id_usuario'].'</p>';
+				echo '<p class="escritor">'. $valor['nom_user'], $valor['fecha'].'</p>';
 				echo '<div class="post-info">'. $valor['conte']. '</div>';
-				echo $valor['conte'];
-				echo '</div>';
 				echo '<div class="post-buttons">';
 				echo '<a href="">Me gusta</a>
 					  <a href="">Comentar</a>

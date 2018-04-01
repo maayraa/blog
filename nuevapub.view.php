@@ -20,7 +20,7 @@
 </div>
 <br>
 <div class="content-user">
-    <label>Id usuario:</label><input type="text" name="id_usuario">
+    <label>usuario:</label><input type="text" name="nom_user">
 </div>
 <br>
 <div class="content-user">

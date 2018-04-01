@@ -128,14 +128,16 @@ h1.post-titulo{
 
 .fecha{
     float:left;
-    margin-right: .5em;
-
+    margin-left: 5em;
+    
 }
-
 .fecha, .escritor{
     margin-top: .5em;
     margin-bottom: .5em;
     font-weight: bold;
+    color: #FF8469;
+    margin-left: 2em;
+    
 }
 
 footer{

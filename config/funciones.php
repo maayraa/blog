@@ -11,7 +11,7 @@
     }
 
     function iniciarSesion ($table, $conexion){
-        $statement = $conexion ->prepare("SELECT * FROM $table WHERE nom_user = :usuario");
+        $statement = $conexion->prepare("SELECT * FROM $table WHERE nom_user = :usuario");
         $statement->execute([
             ':usuario'=>$_SESSION['usuario']
         ]);
@@ -24,4 +24,10 @@
             ':correo'=>$correo
         ]);
         return $query->FETCH(PDO::FETCH_ASSOC);
+    }
+
+    function pubs($id, $conexion){
+        $statement = $conexion->prepare("SELECT * FROM publicaciones WHERE id_pub =  :id");
+        $statement->execute([':id'=>$id]);
+        return $tabla = $statement->fetch();
     }

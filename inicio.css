@@ -10,6 +10,8 @@ li{
 
 a{
     text-decoration: none;
+    color: #F73A48;
+   
 }
 
 .clear{
@@ -44,6 +46,7 @@ a{
     float: right;
     margin-top: .4em;
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 .derecha-a{
@@ -127,7 +130,7 @@ h1.post-titulo{
 }
 
 .fecha{
-    margin-right:10em;
+    margin-left:.5em;
 
 }
 
@@ -137,7 +140,7 @@ h1.post-titulo{
     font-weight: bold;
     color: #FF8469;
     margin-right: 10em;
-
+    
 }
 
 footer{
@@ -148,3 +151,44 @@ footer{
     background: #FF8469;
 }
 
+.content input{
+    padding: 8em;
+    box-sizing: 1em;
+  
+}
+
+textarea{
+    width: 100%;
+    margin-top: .8em;
+}
+
+h1{
+    margin-top: 1em;
+    color: #F73A48;
+}
+
+.content label{
+    font-size: 22px;
+    
+}
+
+.botton-i {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: .8em;
+    background: #F73A48;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    width: 10%;
+    font-size: 15px;
+}
+
+.botton-a {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #F73A48;
+}

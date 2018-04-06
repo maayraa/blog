@@ -1,3 +1,9 @@
+<?php
+	require 'config/dbase.php';
+	require 'config/funciones.php';
+	$conexion = conexion($bd_config);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +24,7 @@
 					echo $_SESSION['usuario'];
 				?>
 				</p>
+				<a href="cerrarsesion.php" class=derecha>Cerrar Sesion</a>
 				<div class="clear"></div>
 			</div>
 		</div>
@@ -25,7 +32,7 @@
 		<menu type="context">
 			<ul>
                 <li class="item-menu"><a href="nuevapub.view.php">NUEVA PUBLICACION</a><img src="images/Publicacion.png" alt=""></li>
-                <li class="item-menu"><a href="">USUARIOS</a><img src="images/usuarios.png" alt=""></li>
+                <li class="item-menu"><a href="usuarios.php">USUARIOS</a><img src="images/usuarios.png" alt=""></li>
                 <li class="item-menu"><a href="">VER POSTS</a><img src="images/posts.png" alt=""></li>
 			</ul>
 		</menu>

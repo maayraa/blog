@@ -7,6 +7,7 @@
     <title>publicacion</title>
     <link rel="stylesheet" href="nuevapub.css">
 </head>
+<div class="perfil">
 <body>
     <h1>Nueva publicacion</h1>
 </div>
@@ -20,7 +21,11 @@
 </div>
 <br>
 <div class="content-user">
-    <label>usuario:</label><input type="text" name="nom_user">
+    <label>Id de usuario:</label><input type="text" name="id_usuario">
+</div>
+<br>
+<div class="content-user">
+    <label>Usuario:</label><input type="text" name="nom_user">
 </div>
 <br>
 <div class="content-user">
@@ -40,7 +45,7 @@
 </div> 
 <br>
 <input type="submit" value="Publicar" class="botton-i" href="inicio.view.php">
-<div class="content-botton">
+<a href="administrador.view.php" title="" class="botton-a">Regresar</a>
     
     
 </body>

@@ -26,7 +26,7 @@
                     <label>Usuario:</label><input type="text" name="user">
                 </div>
                 <div class="content-pass">
-                    <label>Contraseña:</label><input type="text" name="pass">
+                    <label>Contraseña:</label><input type="password" name="pass">
                 </div>
                 <div class="content-botton">
                     <input type="submit" value="Ingresar" name="subm" class="botton-i">

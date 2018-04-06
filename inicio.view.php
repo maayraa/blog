@@ -3,8 +3,12 @@
 	require 'config/funciones.php';
 	$conexion = conexion($bd_config);
 	$stm = $conexion->prepare('SELECT * FROM publicaciones');
+	$com = $conexion->prepare('SELECT * FROM comentarios');
 	$stm->execute();
+	$com->execute();
 	$pub = $stm;
+	$com = $stm;
+
 ?>
 
 
@@ -47,18 +51,31 @@
 		<?php
 			foreach ($pub as $valor ) {
 				echo '<div class="post">';
-				echo '<h1 class="post-titulo">'. $valor['titulo'] .'</h1>';
-				echo '<p class="escritor">'. $valor['nom_user'], $valor['fecha'].'</p>';
-				echo '<div class="post-info">'. $valor['conte']. '</div>';
+				echo '<h1 class="post-titulo">'. utf8_decode($valor['titulo']).'</h1>';
+				echo '<p class="escritor">'. $valor['nom_user'].' '.$valor['fecha'].'</p>';
+				echo '<div class="post-info">'. utf8_decode($valor['conte']).'</div>';
 				echo '<div class="post-buttons">';
 				echo '<a href="">Me gusta</a>
-					  <a href="">Comentar</a>
+					  <a href="./publicacion.php?pub='.$valor['id_pub'].'">Comentar</a>
 					  <a href="">Visitas</a>
                       <a href="">Ver Mas</a>';
 				echo '</div>';
 				echo '</div>';
+			
 			}
+			?>
+			<?php
+
+			foreach($com as $valor){
+				echo '<p class="escritor">'.$valor['texto'].'"></p>';
+				echo '<a href="">Me gusta</a>
+					  <a href="./comentar.php?pub='.$valor['id_pub'].'">Comentar</a>
+					  <a href="">Visitas</a>
+                      <a href="">Ver Mas</a>';
+			}
+				
 		?>
+		
 	</main>
 	<!-- PIE DE PAGINA -->
 	<footer>

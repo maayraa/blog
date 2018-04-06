@@ -15,32 +15,68 @@
 
 .content-user input{
 	padding: 0.3em;
-	width: 50%
+	width: 50%;
+	background:none;
 }
 
 .content-pass input{
 	padding: 10em;
 	width: 50%;
+	background: none;
 }
 
 
 label{
 	font-size: 1.3em;
+	font-family: arial;
 	
 }
 
 .botton-i{
 	display: block;
 	margin: auto;
-	margin-top: 20px;
-	padding: 1em;
+	margin-bottom: 20px;
+	padding: .8em;
 	background: #F73A48;
 	border-radius:10px;
 	border:none;
 	color: #fff;
-	width: 35%;
-	font-size: 16px;
+	width: 10%;
+	font-size: 15px;
+	
 }
+
+.botton-a{
+	display: block;
+	text-align: center;
+	margin-bottom:20px;
+	text-decoration: none;
+	color: #F73A48
+
+}
+
+.pefil{
+	width: 100%;
+    border: 1px solid black; 
+    padding: 10px;
+    background: #FF8469;
+    color:black;
+    text-align: right;
+    font-family: Arial;
+    font-size: 1.3em;
+}
+
+
+h1{
+	display: block;
+	padding: .5em;
+	color:white;
+	font-family: arial;
+	background: #FF8469;
+	border: #FF8462;
+	
+}
+
 
 
 

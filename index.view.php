@@ -42,8 +42,8 @@
 	<?php
 			foreach ($pub as $valor ) {
 				echo '<div class="post">';
-				echo '<h1 class="post-titulo">'. $valor['titulo'] .'</h1>';
-				echo '<div class="post-info">'. $valor['conte']. '</div>';
+				echo '<h1 class="post-titulo">'.utf8_decode($valor['titulo']) .'</h1>';
+				echo '<div class="post-info">'. utf8_decode($valor['conte']) . '</div>';
 				echo '</div>';
 			}
 		?>

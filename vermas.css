@@ -109,11 +109,9 @@ ul{
 }
 
 .post-buttons{
-    text-align: right;  
-}
+    text-align: right;
 
-.post-buttons form{
-    float: right;
+    
 }
 
 .post-buttons a{
@@ -121,15 +119,15 @@ ul{
     margin-right: .5em;
 
 }
-.post-buttons input{
-    background: transparent;
-    border: none;
-    color:#479FDC;
-    cursor: pointer;
-}
-.esconder{display: none;}
+
 .post-info{
-    font-size: 17px;
+    font-size: 18px;
+}
+
+.post-in{
+    font-size: 30px;
+    margin-top: 1em;
+    text-align: justify;
 }
 
 h1.post-titulo{
@@ -143,7 +141,7 @@ h1.post-titulo{
 }
 
 .fecha, .escritor{
-    margin-top: .5em;
+    margin-top: .9em;
     margin-bottom: .5em;
     font-weight: bold;
     color: #FF8469;
@@ -196,7 +194,27 @@ h1{
 .botton-a {
     display: block;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 25px;
     text-decoration: none;
     color: #F73A48;
+    font-size:2em;
+}
+
+img{
+    width: 1.5em;
+    margin-top: .4em;
+    flex-direction: row;
+    float: left;
+
+
+}
+
+h2{
+    margin-top: 1em;
+    text-align: center;
+    color: #EB134E;
+}
+
+.fecha{
+    float: inherit;
 }

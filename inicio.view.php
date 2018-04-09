@@ -3,13 +3,10 @@
 	require 'config/funciones.php';
 	$conexion = conexion($bd_config);
 	$stm = $conexion->prepare('SELECT * FROM publicaciones');
-	$com = $conexion->prepare('SELECT * FROM comentarios');
 	$stm->execute();
-	$com->execute();
 	$pub = $stm;
-	$com = $stm;
-
 ?>
+
 
 
 <!DOCTYPE html>
@@ -49,33 +46,50 @@
 	<!-- SECCION DE NOTICIAS -->
 	<main>
 		<?php
+
 			foreach ($pub as $valor ) {
+				
+				$ttllik = $conexion->prepare("SELECT count(*) FROM likes WHERE id_pub = :idpub");
+				$ttllik->execute([
+					':idpub'=>$valor['id_pub']
+					]);
+				$lik = $ttllik->fetch(); 
+
+
+				$query = $conexion->prepare("SELECT * FROM likes WHERE id_usuario = :iduser AND id_pub = :idpub LIMIT 1");
+				$query->execute([
+					':idpub'=>$valor['id_pub'],
+					':iduser'=>$_SESSION['id_usuario']
+				]);
+				$like = $query->fetch();
+				if ($like == false) {
+					$mg = '<form action="./likes.php" method=post>
+					<input type=text value='.$valor['id_pub'].' name=idpub class=esconder>
+					<input type=submit value=Like name=like>
+					</form>';
+				} else {
+					$mg = '<form action="./likes.php" method=post>
+					<input type=text value='.$valor['id_pub'].' name=idpub class=esconder>
+					<input type=submit value="Don´t Like" name=dontlike>
+					</form>';
+				}
 				echo '<div class="post">';
 				echo '<h1 class="post-titulo">'. utf8_decode($valor['titulo']).'</h1>';
 				echo '<p class="escritor">'. $valor['nom_user'].' '.$valor['fecha'].'</p>';
 				echo '<div class="post-info">'. utf8_decode($valor['conte']).'</div>';
 				echo '<div class="post-buttons">';
-				echo '<a href="">Me gusta</a>
+				echo $mg;
+				echo $lik['count(*)'];
+				
+				echo '
 					  <a href="./publicacion.php?pub='.$valor['id_pub'].'">Comentar</a>
-					  <a href="">Visitas</a>
-                      <a href="">Ver Mas</a>';
+                      <a href="./vermas.view.php?pub='.$valor['id_pub'].'">Ver Mas</a>';
 				echo '</div>';
 				echo '</div>';
+				echo '<div class="clear"></div>';
 			
 			}
 			?>
-			<?php
-
-			foreach($com as $valor){
-				echo '<p class="escritor">'.$valor['texto'].'"></p>';
-				echo '<a href="">Me gusta</a>
-					  <a href="./comentar.php?pub='.$valor['id_pub'].'">Comentar</a>
-					  <a href="">Visitas</a>
-                      <a href="">Ver Mas</a>';
-			}
-				
-		?>
-		
 	</main>
 	<!-- PIE DE PAGINA -->
 	<footer>

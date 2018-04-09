@@ -1,0 +1,22 @@
+*{
+	margin: 0.2em;
+	padding: 0;
+}
+
+h1{
+    font-size: 50px;
+    text-align: center;
+    color: crimson;
+}
+
+main{
+    text-align: center;
+}
+
+.botton-a{
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #F73A48;
+}

@@ -3,9 +3,9 @@ include 'config/dbase.php';
 include 'config/funciones.php';
 $conexion = conexion($bd_config);
 
-	$statement = $conexion->prepare("SELECT * FROM usuarios");
+	$statement = $conexion->prepare("SELECT * FROM publicaciones");
     $statement->execute();
-    $usuario =$statement;
+    $publi = $statement;
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ $conexion = conexion($bd_config);
     <title>Usuarios</title>
 </head>
 <body>
-    <h1>Usuarios Registrados</h1>
+    <h1>Publicaciones</h1>
     <main>
         <table>
             <thead>
@@ -26,14 +26,16 @@ $conexion = conexion($bd_config);
                 <tr>
                     <td>Id usuario</td>
                     <td>Usuario</td>
-                    <td>Tipo de Usuario</td>
+                    <td>Titulo</td>
+                    <td>Contenido</td>
                 </tr>
                 <?php
-                foreach ($usuario as $valor ) {
+                foreach ($publi as $valor ) {
                     echo '<tr>';
                     echo '<td>'.$valor['id_usuario'].'</td>';
                     echo '<td>'.$valor['nom_user'].'</td>';
-                    echo '<td>'.$valor['tipo_user'].'</td>';
+                    echo '<td>'.utf8_decode($valor['titulo']).'</td>';
+                    echo '<td>'.utf8_decode($valor['conte']).'</td>';
                     echo '</tr>';
                 }
                 ?>

@@ -33,7 +33,7 @@
 			<ul>
                 <li class="item-menu"><a href="nuevapub.view.php">NUEVA PUBLICACION</a><img src="images/Publicacion.png" alt=""></li>
                 <li class="item-menu"><a href="usuarios.php">USUARIOS</a><img src="images/usuarios.png" alt=""></li>
-                <li class="item-menu"><a href="">VER POSTS</a><img src="images/posts.png" alt=""></li>
+                <li class="item-menu"><a href="verposts.php">VER POSTS</a><img src="images/posts.png" alt=""></li>
 			</ul>
 		</menu>
 	</header>

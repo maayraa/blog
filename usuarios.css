@@ -19,4 +19,20 @@ main{
     margin-bottom: 20px;
     text-decoration: none;
     color: #F73A48;
+    font-size: 32px;
+
+}
+
+table{
+    margin: auto;
+    border: solid rgb(243, 51, 51) 2px ;
+    padding: 1em;
+    font-size: 20px;
+
+}
+
+table td{
+    padding: .5em;
+
+
 }

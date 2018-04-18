@@ -25,6 +25,7 @@
 				<p class="izquierda">Blog de moda</p>
 				<p class="derecha"><a href="login.view.php">Iniciar Sesion</a></p>
 				<div class="clear"></div>
+				<input type="text" placeholder="Buscar">
 			</div>
 		</div>
 		

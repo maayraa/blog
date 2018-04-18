@@ -45,7 +45,7 @@
 		
 		<menu type="context">
 			<ul>
-				<li class="item-menu"><a href="">NOTICIAS</a></li>
+				<li class="item-menu"><a href="./inicio.view.php">NOTICIAS</a></li>
 				<li class="item-menu"><a href="">TENDENCIAS</a></li>
 				<li class="item-menu"><a href="">OUTFITS</a></li>
 			</ul>

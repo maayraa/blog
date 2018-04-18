@@ -1,9 +1,12 @@
 <?php
 	require 'config/dbase.php';
 	require 'config/funciones.php';
+	
 	$conexion = conexion($bd_config);
-	$stm = $conexion->prepare('SELECT * FROM publicaciones');
+	$stm = $conexion->prepare('SELECT * FROM publicaciones WHERE id_cat = 2');
 	$stm->execute();
+		
+
 	$pub = $stm;
 ?>
 
@@ -15,7 +18,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="inicio.css">
-	<title>Inicio</title>
+	<title>Novedades</title>
 </head>
 <body>
 	<!-- ENCABEZADO DE LA PAGINA -->
@@ -29,7 +32,6 @@
 					echo '<a href="perfil.php?user='.$_SESSION['id_usuario'].'">'.$_SESSION['usuario'].'</a>';
 				?>
 				</p>
-				
 				<a href="cerrarsesion.php" class=derecha-a>Cerrar Sesion</a>
 				<div class="clear"></div>
 				<input type="text" placeholder="Buscar">
@@ -38,7 +40,7 @@
 		
 		<menu type="context">
 			<ul>
-				<li class="item-menu"><a href="./inicio.view.php">INICIO</a></li>
+                <li class="item-menu"><a href="./inicio.view.php">INICIO</a></li>
 				<li class="item-menu"><a href="./noticias.view.php">NOTICIAS</a></li>
 				<li class="item-menu"><a href="./tendencias.view.php">TENDENCIAS</a></li>
 				<li class="item-menu"><a href="./novedades.view.php">NOVEDADES</a></li>

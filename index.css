@@ -99,9 +99,10 @@ ul{
     font-family: arial;
     transition: all 500ms;
     margin-top: 2%;
-    border: 2px solid #DA3E10;
+    border: 4px solid #DA3E10;
     width: 90%;
     border-radius: 10px;
+    background: lightgoldenrodyellow;
   
 }
 
@@ -148,3 +149,10 @@ footer{
     background: #FF8469;
 }
 
+input{
+border-radius: 12px;
+    padding: .5em;
+    border-color: cadetblue;
+    margin-left: 75em;
+    outline: 0px;
+}

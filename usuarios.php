@@ -7,6 +7,17 @@ $conexion = conexion($bd_config);
     $statement->execute();
     $usuario =$statement;
 
+    if (isset($_POST['btn'])) {
+        $tipo   = $_POST['tipo'];
+        $user   = $_POST['user'];
+        $statement = $conexion->prepare("UPDATE usuarios SET tipo_user = :tipo WHERE id_usuario = :user");
+        $statement->execute([
+            ':tipo' =>  $tipo,
+            ':user' =>  $user
+        ]);
+        header ('Location: '.RUTA.'usuarios.php');
+     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,10 +35,30 @@ $conexion = conexion($bd_config);
             <thead>
                 <caption></caption>
                 <tr>
-                    <td>Id usuario</td>
-                    <td>Usuario</td>
-                    <td>Tipo de Usuario</td>
+                    <td>Id usuario
+            
+
+                    <td>Nombre<select name="user">
+                        <?php
+            foreach ($usuario as $valor) {
+            echo '<option value='.$valor['id_user'].'>'.$valor['nom_user'].'</option>';
+                            }
+                        ?>
+                    </select></td>
+
+                    <td>Tipo de usuario</td>
+                    <td>
+                    <select name="tipo">
+                        <option value="1">Usuario</option>
+                        <option value="2">Moderador</option>
+                        <option value="3">Administrador</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="submit" value="Guardar" class=i_button_c name=btn>
+                </td>
                 </tr>
+
                 <?php
                 foreach ($usuario as $valor ) {
                     echo '<tr>';

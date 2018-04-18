@@ -1,12 +1,14 @@
 *{
-	margin: 0.2em;
-	padding: 0;
+	margin: 0;
+    padding: 0;
+    font-family: arial;
 }
 
 h1{
     font-size: 50px;
     text-align: center;
-    color: crimson;
+    color: white;
+    background: #FF8469;
 }
 
 main{
@@ -20,7 +22,14 @@ main{
     text-decoration: none;
     color: #F73A48;
     font-size: 32px;
+    margin-top:28px;
 
+}
+
+.botton-c{
+    padding: .5em;
+    border-radius: 10px;
+    color: crimson;
 }
 
 table{
@@ -28,6 +37,7 @@ table{
     border: solid rgb(243, 51, 51) 2px ;
     padding: 1em;
     font-size: 20px;
+    margin-top: 1.5em;
 
 }
 
@@ -35,4 +45,28 @@ table td{
     padding: .5em;
 
 
+}
+
+img{
+    margin-left: 34em;
+    margin-top: 2em;
+}
+
+input{
+    padding: .5em;
+    border-color: grey;
+    margin-left: 35em;
+    margin-top: 2em;
+}
+
+.n{
+    margin-top: .2em;
+}
+.n input{
+    text-align: center;
+    margin-right: 12em;
+}
+
+.n label{
+    
 }

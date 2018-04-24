@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 	require 'config/dbase.php';
 	require 'config/funciones.php';
 	$conexion = conexion($bd_config);
@@ -23,16 +23,33 @@
 		<div class="perfil">
 			<div class="perfil-info">
 				<img src="images/avatar.png" alt="">
-				<p class="izquierda">Bienvenido!!!</p>
+				
+				<?php
+					switch ($_SESSION['tipo_user']) {
+						case '1':
+							echo '<p class="izquierda">Bienvenido!!!</p>';
+							break;
+						case '2':
+							echo '<p class="izquierda">Bienvenido Moderador!!!</p>';
+							break;
+						case '3':
+							echo '<p class="izquierda">Bienvenido Administrador!!!</p>';
+							break;
+						default:
+							echo '<p class="izquierda">Bienvenido!!!</p>';
+							break;
+					}
+				?>
 				<p class="derecha" href="perfil.php">
-				<?php session_start();
+				<?php
 					echo '<a href="perfil.php?user='.$_SESSION['id_usuario'].'">'.$_SESSION['usuario'].'</a>';
 				?>
 				</p>
 				
 				<a href="cerrarsesion.php" class=derecha-a>Cerrar Sesion</a>
 				<div class="clear"></div>
-				<input type="text" placeholder="Buscar">
+				<!--<input type="text" placeholder="Buscar"> -->
+				
 			</div>
 		</div>
 		
@@ -68,13 +85,11 @@
 				if ($like == false) {
 					$mg = '<form action="./likes.php" method=post>
 					<input type=text value='.$valor['id_pub'].' name=idpub class=esconder>
-					<input type=submit value=Like name=like>
-					</form>';
+					<input type=submit value=Like name=like>';
 				} else {
 					$mg = '<form action="./likes.php" method=post>
 					<input type=text value='.$valor['id_pub'].' name=idpub class=esconder>
-					<input type=submit value="Don´t Like" name=dontlike>
-					</form>';
+					<input type=submit value="Don´t Like" name=dontlike>';
 				}
 				echo '<div class="post">';
 				echo '<h1 class="post-titulo">'. utf8_decode($valor['titulo']).'</h1>';
@@ -82,11 +97,11 @@
 				echo '<div class="post-info">'. utf8_decode($valor['conte']).'</div>';
 				echo '<div class="post-buttons">';
 				echo $mg;
-				echo $lik['count(*)'];
+				echo '<span>'.$lik['count(*)'].'</span></form>';
 				
 				echo '
 					  <a href="./publicacion.php?pub='.$valor['id_pub'].'">Comentar</a>
-                      <a href="./vermas.view.php?pub='.$valor['id_pub'].'">Ver Mas</a>';
+					  <a href="./vermas.view.php?pub='.$valor['id_pub'].'">Ver Mas</a>';
 				echo '</div>';
 				echo '</div>';
 				echo '<div class="clear"></div>';

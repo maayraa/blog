@@ -19,6 +19,7 @@
         if ($resultado !== false) {
             $_SESSION['usuario'] = $user;
             $_SESSION['id_usuario'] = $resultado['id_usuario'];
+            $_SESSION['tipo_user'] = $resultado['tipo_user'];
             header('Location: '.RUTA.'validacion.php');
         }
     }

@@ -25,9 +25,10 @@
 		
 		<menu type="context">
 			<ul>
-				<li class="item-menu"><a href="./inicio.view.php">NOTICIAS</a></li>
-				<li class="item-menu"><a href="">TENDENCIAS</a></li>
-				<li class="item-menu"><a href="">OUTFITS</a></li>
+				<li class="item-menu"><a href="./inicio.view.php">INICIO</a></li>
+				<li class="item-menu"><a href="./noticias.view.php">NOTICIAS</a></li>
+				<li class="item-menu"><a href="./tendencias.view.php">TENDENCIAS</a></li>
+				<li class="item-menu"><a href="./novedades.view.php">NOVEDADES</a></li>
 			</ul>
 		</menu>
 	<div class="content-noticia">

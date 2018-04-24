@@ -34,7 +34,7 @@
 				</p>
 				<a href="cerrarsesion.php" class=derecha-a>Cerrar Sesion</a>
 				<div class="clear"></div>
-				<input type="text" placeholder="Buscar">
+				<!--<input type="text" placeholder="Buscar"> -->
 			</div>
 		</div>
 		

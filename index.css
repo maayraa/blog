@@ -10,6 +10,12 @@ li{
 
 a{
     text-decoration: none;
+    color: #8e7a74;
+}
+
+
+body{
+    background: brown;
 }
 
 .clear{
@@ -25,6 +31,8 @@ a{
     /*text-align: right;*/
     font-family: Arial;
     font-size: 1.3em;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
 }
 
 .perfil img{
@@ -86,8 +94,10 @@ ul{
 }
 
 .item-menu:hover, .item-menu a:hover{
-    background: transparent;
-    color:#F73A48;
+    background: whitesmoke;
+    border-radius: 10px;
+    color:#E74C3C;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .post{
@@ -103,6 +113,7 @@ ul{
     width: 90%;
     border-radius: 10px;
     background: lightgoldenrodyellow;
+    
   
 }
 
@@ -119,7 +130,9 @@ ul{
 }
 
 .post-info{
-    font-size: 17px;
+    font-size: 20px;
+    text-align: justify;
+
 }
 
 h1.post-titulo{
@@ -147,12 +160,6 @@ footer{
     bottom: 0;
     padding: 1em;
     background: #FF8469;
+    border-radius: 5px;
 }
 
-input{
-border-radius: 12px;
-    padding: .5em;
-    border-color: cadetblue;
-    margin-left: 75em;
-    outline: 0px;
-}

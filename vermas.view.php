@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 	require 'config/dbase.php';
 	require 'config/funciones.php';
 	$conexion = conexion($bd_config);
@@ -32,9 +32,24 @@
 		<div class="perfil">
 			<div class="perfil-info">
 				<img src="images/avatar.png" alt="">
-				<p class="izquierda">Bienvenido!!!</p>
+				<?php
+					switch ($_SESSION['id_usuario']) {
+						case '1':
+							echo '<p class="izquierda">Bienvenido!!!</p>';
+							break;
+						case '2':
+							echo '<p class="izquierda">Bienvenido Moderador!!!</p>';
+							break;
+						case '3':
+							echo '<p class="izquierda">Bienvenido Administrador!!!</p>';
+							break;
+						default:
+							echo '<p class="izquierda">Bienvenido!!!</p>';
+							break;
+					}
+				?>
 				<p class="derecha">
-				<?php session_start();
+				<?php 
 					echo $_SESSION['usuario'];
 				?>
 				</p>
@@ -45,9 +60,9 @@
 		
 		<menu type="context">
 			<ul>
-				<li class="item-menu"><a href="./inicio.view.php">NOTICIAS</a></li>
-				<li class="item-menu"><a href="">TENDENCIAS</a></li>
-				<li class="item-menu"><a href="">OUTFITS</a></li>
+			<li class="item-menu"><a href="./noticias.view.php">NOTICIAS</a></li>
+				<li class="item-menu"><a href="./tendencias.view.php">TENDENCIAS</a></li>
+				<li class="item-menu"><a href="./novedades.view.php">NOVEDADES</a></li>
 			</ul>
 		</menu>
     </header>
@@ -71,7 +86,17 @@
 				echo '<p class="escritor">'. ' '.$valor['user'].' <br>'.$valor['fecha'].'</p>';
 				echo '<div class="post-info">'. utf8_decode($valor['texto']).'</div>';
 				echo '<div class="post-buttons">';
-				echo '<a href="">Me gusta</a>';
+				switch ($_SESSION['tipo_user']) {
+					case '2':
+						echo '<a href="eliminar.php?com='.$valor['id_com'].'&pub='.$valor['id_pub'].'">Eliminar</a>';
+						break;
+					case '3':
+						echo '<a href="eliminar.php?com='.$valor['id_com'].'&id='.$valor['id_usuario'].'&pub='.$valor['id_pub'].'">Eliminar</a>';
+						break;
+					default:
+						# code...
+						break;
+				}
 				echo '</div>';
 				echo '</div>';
 			

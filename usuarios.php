@@ -7,7 +7,7 @@ $conexion = conexion($bd_config);
     $statement->execute();
     $usuario =$statement;
 
-    if (isset($_POST['btn'])) {
+    if (!empty($_POST['btn'])) {
         $tipo   = $_POST['tipo'];
         $user   = $_POST['user'];
         $statement = $conexion->prepare("UPDATE usuarios SET tipo_user = :tipo WHERE id_usuario = :user");
@@ -31,21 +31,20 @@ $conexion = conexion($bd_config);
 <body>
     <h1>Usuarios Registrados</h1>
     <main>
+    <form action="usuarios.php" method="POST">
         <table>
             <thead>
                 <caption></caption>
                 <tr>
-                    <td>Id usuario
-            
 
+                    <td>Id usuario</td>
                     <td>Nombre<select name="user">
                         <?php
-            foreach ($usuario as $valor) {
-            echo '<option value='.$valor['id_user'].'>'.$valor['nom_user'].'</option>';
+                            foreach ($usuario as $valor) {
+                                echo '<option value="'.$valor['id_usuario'].'" name=user>'.$valor['nom_user'].'</option>';
                             }
                         ?>
                     </select></td>
-
                     <td>Tipo de usuario</td>
                     <td>
                     <select name="tipo">
@@ -60,17 +59,33 @@ $conexion = conexion($bd_config);
                 </tr>
 
                 <?php
-                foreach ($usuario as $valor ) {
-                    echo '<tr>';
-                    echo '<td>'.$valor['id_usuario'].'</td>';
-                    echo '<td>'.$valor['nom_user'].'</td>';
-                    echo '<td>'.$valor['tipo_user'].'</td>';
-                    echo '</tr>';
-                }
+                    $statement = $conexion->prepare("SELECT * FROM usuarios");
+                    $statement->execute();
+                    $usuario =$statement;
+                    foreach ($usuario as $valor ) {
+                        echo '<tr>';
+                        echo '<td>'.$valor['id_usuario'].'</td>';
+                        echo '<td>'.$valor['nom_user'].'</td>';
+                        switch ($valor['tipo_user']) {
+                            case '1':
+                                echo '<td>Miembro</td>';
+                            break;
+                            case '2':
+                                echo '<td>Moderador</td>';
+                            break;
+                            case '3':
+                                echo '<td>Administrador</td>';
+                                break;
+                            default:
+                                # code...
+                                break;
+                        }
+                        echo '</tr>';
+                    }
                 ?>
             </thead>
         </table>
-    
+    </form>  
     </main>
     <a href="administrador.view.php" title="" class="botton-a">Regresar</a>
 </body>

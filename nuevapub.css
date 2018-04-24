@@ -2,6 +2,11 @@
 	margin: 0;
 	padding: 0;
 }
+
+body{
+	background: brown;
+}
+
 .margin_top{
   margin-top: 10px;
  
@@ -15,20 +20,28 @@
 
 .content-user input{
 	padding: 0.3em;
-	width: 50%;
-	background:none;
+    width: 50%;
+    background: white;
+    border: 3px solid #ff8469;
+	border-radius: 10px;
+	outline: 0px;
 }
 
 .content-pass input{
 	padding: 10em;
 	width: 50%;
 	background: none;
+	background: white;
+    border: 3px solid #ff8469;
+	border-radius: 10px;
+	outline: 0px;
 }
 
 
 label{
 	font-size: 1.3em;
-	font-family: arial;
+    font-family: arial;
+    color: antiquewhite;
 	
 }
 
@@ -48,10 +61,10 @@ label{
 
 .botton-a{
 	display: block;
-	text-align: center;
-	margin-bottom:20px;
-	text-decoration: none;
-	color: #F73A48
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #ffffff;
 
 }
 

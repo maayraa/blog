@@ -15,14 +15,18 @@ main{
     text-align: center;
 }
 
+body{
+    background: brown;
+}
+
 .botton-a{
     display: block;
     text-align: center;
     margin-bottom: 20px;
     text-decoration: none;
-    color: #F73A48;
+    color: #fffcfc;
     font-size: 32px;
-    margin-top:28px;
+    margin-top: 28px;
 
 }
 
@@ -34,10 +38,12 @@ main{
 
 table{
     margin: auto;
-    border: solid rgb(243, 51, 51) 2px ;
+    border: solid rgb(243, 51, 51) 3px ;
     padding: 1em;
     font-size: 20px;
     margin-top: 1.5em;
+    background: lightgoldenrodyellow;
+    border-radius: 10px;
 
 }
 
@@ -54,9 +60,11 @@ img{
 
 input{
     padding: .5em;
-    border-color: grey;
+    border-color: coral;
     margin-left: 35em;
     margin-top: 2em;
+    border-radius: 10px;
+    outline: 0px;
 }
 
 .n{
@@ -64,9 +72,15 @@ input{
 }
 .n input{
     text-align: center;
-    margin-right: 12em;
+    outline: 0px;
+    border-color: coral;
 }
 
-.n label{
-    
+label{
+    font-size: 20px;
+    color: #f5d7d7;
+}
+
+h2{
+    color:bisque;
 }

@@ -25,7 +25,6 @@
 				<p class="izquierda">Blog de moda</p>
 				<p class="derecha"><a href="login.view.php">Iniciar Sesion</a></p>
 				<div class="clear"></div>
-				<input type="text" placeholder="Buscar">
 			</div>
 		</div>
 		
@@ -33,7 +32,7 @@
 			<ul>
 				<li class="item-menu"><a href="">NOTICIAS</a></li>
 				<li class="item-menu"><a href="">TENDENCIAS</a></li>
-				<li class="item-menu"><a href="">OUTFITS</a></li>
+				<li class="item-menu"><a href="">NOVEDADES</a></li>
 			</ul>
 		</menu>
 	</header>

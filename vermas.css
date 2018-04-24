@@ -14,6 +14,10 @@ a{
    
 }
 
+body{
+    background: brown;
+}
+
 .clear{
     clear: both;
 }
@@ -27,6 +31,7 @@ a{
     /*text-align: right;*/
     font-family: Arial;
     font-size: 1.3em;
+    border-radius: 10px;
 }
 
 .perfil img{
@@ -89,8 +94,9 @@ ul{
 }
 
 .item-menu:hover, .item-menu a:hover{
-    background: transparent;
+    background: white;
     color:#F73A48;
+    border-radius: 10px;
 }
 
 .post{
@@ -102,9 +108,10 @@ ul{
     font-family: arial;
     transition: all 500ms;
     margin-top: 2%;
-    border: 2px solid #DA3E10;
+    border: 2px solid #ff8469;
     width: 90%;
     border-radius: 10px;
+    background: lightgoldenrodyellow;
   
 }
 
@@ -125,14 +132,19 @@ ul{
 }
 
 .post-in{
-    font-size: 30px;
+    font-size: 23px;
     margin-top: 1em;
     text-align: justify;
+    border: 3px solid #ff8469;
+    border-radius: 10px;
+    padding: 2em;
+    background: lightgoldenrodyellow;
 }
 
 h1.post-titulo{
-    color:#E45213;
-    font-size: 22px;
+    color: #ffffff;
+    font-size: 27px;
+    margin-left: 32px;
 }
 
 .fecha{
@@ -155,6 +167,9 @@ footer{
     bottom: 0;
     padding: 1em;
     background: #FF8469;
+    border-radius: 10px;
+    font-family: arial;
+    color: aliceblue;
 }
 
 .content input{
@@ -196,8 +211,8 @@ h1{
     text-align: center;
     margin-top: 25px;
     text-decoration: none;
-    color: #F73A48;
-    font-size:2em;
+    color: #ffffff;
+    font-size: 2em;
 }
 
 img{
@@ -212,7 +227,7 @@ img{
 h2{
     margin-top: 1em;
     text-align: center;
-    color: #EB134E;
+    color: burlywood;
 }
 
 .fecha{

@@ -2,6 +2,11 @@
 	margin: 0;
 	padding: 0;
 }
+
+body{
+	background: brown;
+}
+
 .margin_top{
   margin-top: 10px;
  
@@ -13,7 +18,7 @@
   justify-content: center;
   align-items: center;
   width: 45%;
-  height: 100vh;
+  height: 110vh;
   background: #FF8469;
 
 }
@@ -65,6 +70,7 @@
 
 label{
 	font-size: 1.3em;
+    color: white;
 	
 }
 .botton-i{
@@ -82,10 +88,11 @@ label{
 
 a.botton-a{
 	display: block;
-	text-align: center;
-	margin-top: 1.2em;
-	text-decoration: none;
-	color: #F73A48
+    text-align: center;
+    margin-top: 1.2em;
+    text-decoration: none;
+    color: #ffffff;
+}
 
 }
 

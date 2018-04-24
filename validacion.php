@@ -10,7 +10,7 @@ include 'config/funciones.php';
             header('Location: '.RUTA.'inicio.view.php');
             // echo 1;
         }elseif ($usuario['tipo_user'] == 2) {
-            header('Location: '.RUTA.'moderador.view.php');
+            header('Location: '.RUTA.'inicio.view.php');
         } else{
             header('Location: '.RUTA.'administrador.view.php');
             // echo 3;

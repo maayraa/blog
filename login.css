@@ -63,6 +63,8 @@
 
 label{
 	font-size: 1.5em;
+    color: white;
+    font-family: arial;
 }
 .botton-i{
 	display: block;
@@ -78,14 +80,18 @@ label{
 }
 
 a.botton-a{
-	display: block;
-	text-align: center;
-	margin-top: 1.2em;
-	text-decoration: none;
-	color: #F73A48
+    display: block;
+    text-align: center;
+    margin-top: 1.2em;
+    text-decoration: none;
+    color: rgba(224, 216, 216, 0.75);
 
 }
 
+html {
+	display: block;
+	background: brown;
+}
 
 
 
